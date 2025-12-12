@@ -3,118 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <title>Osobní stránky</title>
+    <meta http-equiv="refresh" content="2; url=http://janbednar.atwebpages.com/">
+    <title>Osobní stránky</title>
     
-    <style>
-        /* Základní reset a nastavení */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px 0;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #0056b3;
-            margin-bottom: 30px;
-        }
-
-        /* Styl pro <details> sekci */
-        details {
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        details:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        summary {
-            font-size: 1.15rem;
-            font-weight: bold;
-            padding: 15px 20px;
-            cursor: pointer;
-            outline: none;
-            list-style: none; /* Skryje výchozí šipku/trojúhelník */
-            position: relative;
-            background-color: #eaf4ff;
-            border-radius: 8px 8px 0 0;
-        }
-
-        /* Vlastní šipka pro summary */
-        summary::before {
-            content: '+';
-            font-size: 1.2rem;
-            margin-right: 10px;
-            display: inline-block;
-            transition: transform 0.3s ease;
-            color: #0056b3;
-        }
-
-        details[open] > summary::before {
-            content: '−';
-            transform: rotate(0deg);
-        }
-
-        /* Styl pro odkazy uvnitř details */
-        .links-grid {
-            padding: 15px 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsivní rozvržení */
-            gap: 10px;
-            border-top: 1px solid #eee;
-        }
-
-        .links-grid a {
-            display: block;
-            padding: 8px 10px;
-            background-color: #f9f9f9;
-            border: 1px solid #eee;
-            border-radius: 4px;
-            text-decoration: none;
-            color: #007bff;
-            transition: background-color 0.2s, color 0.2s;
-            white-space: nowrap; /* Zabrání zalomení textu odkazu */
-            overflow: hidden;
-            text-overflow: ellipsis; /* Přidá tři tečky, pokud se nevejde */
-        }
-
-        .links-grid a:hover {
-            background-color: #e0f0ff;
-            color: #0056b3;
-        }
-
-        /* Styl pro vnitřní nadpisy (Předměty) */
-        .links-grid h3 {
-            grid-column: 1 / -1; /* Nadpis přes celou šířku */
-            margin: 10px 0;
-            padding: 5px 0;
-            border-bottom: 2px solid #ff0000;
-        }
-
-        /* Responsivní úpravy pro menší obrazovky */
-        @media (max-width: 600px) {
-            .links-grid {
-                grid-template-columns: 1fr; /* Jeden sloupec na mobilu */
-            }
-            summary {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styly.css">
 </head>
 <body>
     <div class="container">
@@ -340,17 +232,7 @@
                 <a href="https://onecloud.com"  target="_blank">Onecloud</a>
             </div>
         </details>
-		
-        <details>
-            <summary>Statický hosting</summary>
-            <div class="links-grid">
-                <a href="https://app.netlify.com/projects/janbednar/overview" target="_blank">Netlify</a>
-				<a href="https://docs.github.com/en/pages" target="_blank">Githubpages</a>
-				<a href="https://www.dropbox.com/paper/home?role=personal" target="_blank">Dropbox pages</a>
-            </div>
-        </details>
-		
-		
+
         <details>
             <summary> Užitečné zdroje obrázků bez porušení autorských práv</summary>
             <div class="links-grid">
@@ -394,7 +276,7 @@
         <details>
             <summary>Předměty</summary>
             <div class="links-grid">
-                <h3 style="color: red">Matematika</h3>
+                <h3 class="subject-heading">Matematika</h3>
                 <a href="https://wordwall.net/cs-cz/community/matematika/kv%C3%ADz-z-matematiky"  target="_blank">Matematika kviz</a>
                 <a href="https://www.skolasnadhledem.cz/"  target="_blank">Škola s nadhledem</a>
                 <a href="https://www.geogebra.org/calculator"  target="_blank">Grafy vyobrazení</a>
@@ -405,10 +287,10 @@
                 <a href="https://reseneulohy.cz/cs"  target="_blank">Sbírka řešených úloh</a>
                 <a href="https://www.priklady.com/cs_new/index.php/priklady-z-matematiky-pro-vysoke-skoly"  target="_blank">Příklady z Matematiky pro Vysoké Školy</a>
                 <a href="https://kdm.karlin.mff.cuni.cz/diplomky/stepan_kurka/trojuhelnik.htm"  target="_blank">Konstrukční úlohy</a>
-                <h3 style="color: red">Fyzika</h3>
+                <h3 class="subject-heading">Fyzika</h3>
                 <a href="https://iqlandia.cz/iqblog/section:22"  target="_blank">Iqlandia - Fyzika</a>
                 <a href="https://www.e-fyzika.cz/priklady/"  target="_blank">Fyzika - Příklady na středoškolskou fyziku</a>
-                <h3 style="color: red">Chemie</h3>
+                <h3 class="subject-heading">Chemie</h3>
                 <a href="https://chemicke-vypocty.cz/"  target="_blank">Chemické výpočty</a>
             </div>
         </details>
@@ -495,10 +377,10 @@
                 <a href="http://www.fastlinux.eu/_archiv/index.php?page=linux026#Lock" target="_blank">Openbox</a>
                 <a href="https://github.com/bedjan/debian/blob/master/poznamky/linux_cli.md" target="_blank">Github_linux</a>
                 <a href="https://translate.google.cz/translate?hl=cs&sl=en&tl=cs&u=http%3A%2F%2Flinux.org" target="_blank">Linux.org</a>
-                <a href="https://translate.google.cz/translate?hl=cs?sl=auto&sl=auto&tl=cs&u=https%3A%2F%2Fdistrowatch.com%2F&sandbox=1" target="_blank">Distrowatch</a>
+                <a href="https://translate.google.cz/translate?sl=auto&sl=auto&tl=cs&u=https%3A%2F%2Fdistrowatch.com%2F&sandbox=1" target="_blank">Distrowatch</a>
                 <a href="https://translate.google.cz/translate?sl=en&tl=cs&js=y&prev=_t&hl=cs&ie=UTF-8&u=linux.press&edit-text=&act=url" target="_blank">Linux_press</a>
                 <a href="https://www.debian.org/index.cs.html" target="_blank">Debian</a>
-                <a href="https://github.com/bedjan/debian" target="_blank">Debian - skripty a config</a>
+                <a href="https://github.com/bedjan/debian/blob/master/skripty/all.sh" target="_blank">Debian - skripty a config</a>
                 <a href="https://github.com/bedjan/debian/blob/master/poznamky/debian.md" target="_blank">Moje poznámky k debianu</a>
                 <a href="https://github.com/bedjan/debian/blob/master/poznamky/linux.md" target="_blank">Obecně</a>
                 <a href="https://github.com/bedjan/debian/blob/master/poznamky/linux_cli.md" target="_blank">Cli - příkazový řádek</a>
@@ -530,109 +412,9 @@
                 <a href="https://thinfi.com/" target="_blank">Link with password</a>
                 <a href="https://bitly.com/" target="_blank">Link short</a>
                 <a href="https://raw.githack.com/" target="_blank">Raw githack - dev</a>
-                <a href="https://tinyurl.com/" target="_blank">Tinyurl</a>
-                <a href="https://gist.io/" target="_blank">Gist.io i</a>
-                <a href="https://uiwjs.github.io/react-md-editor/" target="_blank">Markdown editor</a>
             </div>
         </details>
 
-
-        <details>
-            <summary>Github</summary>
-            <div class="links-grid">
-                <a href="https://github.com/bedjan/akupresura/blob/master/akupresura_prvni_pomoc.md" target="_blank">Github_akupresura</a>
-                <a href="https://github.com/bedjan/windows" target="_blank">Github_windows</a>
-                <a href="https://github.com/bedjan/github/blob/master/README.md" target="_blank">Github_poznamky</a>
-                <a href="https://gist.github.com/bedjan" target="_blank">Gist bedjan</a>
-                <a href="https://github.com/bedjan/windows" target="_blank">Windows</a>
-                <a href="https://github.com/bedjan/thinkpad_t410" target="_blank">Thinkpad_t410 poznámky, ovladače, ...</a>
-                <a href="https://github.com/bedjan/sw/tree/master" target="_blank">Software</a>
-                <a href="https://github.com/bedjan/hw/tree/master" target="_blank">Hardware</a>
-            </div>
-        </details>
-
-
-        <details>
-            <summary>Životní prostředí</summary>
-            <div class="links-grid">
-                <a href="http://www.enviweb.cz/" target="_blank">Enviweb</a>
-                <a href="https://www.mzp.cz/" target="_blank">Mžp</a>
-                <a href="http://arnika.org/zero-waste" target="_blank">Arnika zerowaste</a>
-                <a href="http://www.czechzerowaste.cz/" target="_blank">Český blog o životě bez odpadu</a>
-                <a href="http://zerowaste.bezobalu.org/" target="_blank">Bezobalu - o zerowaste</a>
-                <a href="https://translate.google.cz/translate?sl=en&tl=cs&js=y&prev=_t&hl=cs&ie=UTF-8&u=zerowasteeurope.eu&edit-text=&act=url" target="_blank">Zero waste europe</a>
-                <a href="https://www.greenglasses.cz/cs/business-category/zero-waste-obchody-jidlo-piti/" target="_blank">Zero waste obchody v čr</a>
-            </div>
-        </details>
-
-        <details>
-            <summary>Minimalismus</summary>
-            <div class="links-grid">
-                <a href="http://zijememinimalismem.cz/minimalismus-co-to-je-prosim-te/" target="_blank">Co je minimalismus</a>
-                <a href="https://translate.google.cz/translate?hl=cs?sl=en&tl=cs&u=www.becomingminimalist.com/most-popular-posts/" target="_blank">Minimalismus ve světě</a>
-            </div>
-        </details>
-
-        <details>
-            <summary>Psychologie</summary>
-            <div class="links-grid">
-                <a href="https://psychologie.cz/clanky/" target="_blank">Psychologie</a>
-                <a href="https://www.pronaladu.cz/" target="_blank">Pronaladu</a>
-                <a href="https://e-psycholog.eu/archiv" target="_blank">Epsychologie</a>
-                <a href="https://www.czso.cz/csu/czso/statistiky" target="_blank">Statistiky</a>
-            </div>
-        </details>
-
-
-        <details>
-            <summary>Pedagogika</summary>
-            <div class="links-grid">
-                <a href="http://htmlpreview.github.io/?https://rawcdn.githack.com/bedjan/skola/master/psychologie.html" target="_blank">Psychologie</a>
-                <a href="http://htmlpreview.github.io/?https://rawcdn.githack.com/bedjan/skola/master/pedagogika.html" target="_blank">Pedagogika</a>
-            </div>
-        </details>
-        
-        <details>
-            <summary>Ostatní</summary>
-            <div class="links-grid">
-                <a href="https://login.yahoo.com" target="_blank">Yahoo_email</a>
-                <a href="https://www.seznam.cz/" target="_blank">Seznam</a>
-                <a href="https://login.szn.cz/" target="_blank">Seznam_email</a>
-                <a href="https://login.szn.cz/?serviceId=sweb&loggedURL=http://webadmin.sweb.cz/" target="_blank">Seznam_sweb</a>
-                <a href="ftp://sweb.cz/" target="_blank">Seznam_ftp</a>
-                <a href="https://uloz.to/login?key=logreg" target="_blank">Ulozto</a>
-                <a href="https://www.vinted.cz/member/general/login?ref_url=%2F&__cf_chl_captcha_tk__=06e60c0838f1e7a7cfd5731145275268b2f8d333-1622574905-0-AWud745mERmzGs9xCMmTroN332YOMEB1XBdXrPdWOQb8DLHtVc_N12zsvulYXNXLllall03fFZTibqJOiwZAUE81L6fVqCpHHbu8-3razVqegPH9re-QEQZfqn7EzyWYJCjI2_q2ZBDKAAQnTeVwL2CdkgiuZvHgTuBg8Jd0sF0cqNidaj8mYoXU3bamrN5TBnyEWwS7CHFcmdRPpW1RfAfMRh40-evwGj-9EHUsXZrma23ik_BXVbhs2URb_mb-GVAXMaakFCT3XV5bppHKz3oSSQz9jTwc73S1Ym0l089x-QfVBsc4XUGYtDeykKIjTo1rm7h9RLIAkGRq8nPcFCcdZBznaFb779UgKQ-KLYomfrqAkRsCYDPIvNSiPs_R3WRyAR2Y-jpSJTaKdTb78nX5sCH8qsqJ9Q9ksbvWsFlMsUE15ua8lyGrnQsN8KmTWkanrIneuVfsDHqVyqzpRZNAvz5r-CDm1pA5x5M4FkYXcwPL_KOJ6fR96lPDrN1cWOAlMHY8oRnfqNJMqhEva-zZ-BC31NoXdbsXtNr6xJtd3qr331Bq237FcAWYvwHtAWUsXCwV_Dh95L4WR747luRvi9htOMEXK34CgQk1GWc52dUVjzxTaz52vX-YNdjiKSYxnYlWP1stZtGLkRBqNyWdj7uGW-kdlOaKtfBqkWEpvg1OgUdgB21cuPY-GsWc6Gyq2XGrc35xgFbVdouNQxg" target="_blank">Vinted</a>
-                <a href="https://www.jobs.cz/" target="_blank">Jobs</a>
-                <a href="https://www.jprace.cz/" target="_blank">Prace</a>
-                <a href="http://janbednar.sweb.cz/" target="_blank">Web</a>
-                <a href="https://sites.google.com/site/bedjansite/" target="_blank">Janbednar@osobni</a>
-                <a href="https://www.bazos.cz/" target="_blank">Bazos</a>
-            </div>
-        </details>
-
-        <details>
-            <summary>Firefox</summary>
-            <div class="links-grid">
-                <a href="https://addons.mozilla.org/cs/firefox/addon/open-with/" target="_blank">open_with</a>
-                <a href="https://addons.mozilla.org/cs/firefox/addon/foxy-gestures/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search" target="_blank">foxy gestures</a>
-                <a href="https://addons.mozilla.org/cs/firefox/addon/ublock-origin/" target="_blank">ublock origin</a>
-                <a href="https://addons.mozilla.org/cs/firefox/addon/bitwarden-password-manager/" target="_blank">Bitwarden</a>
-                <a href="https://addons.mozilla.org/cs/firefox/addon/lastpass-password-manager/" target="_blank">lastpass</a>
-                <a href="https://addons.mozilla.org/cs/firefox/addon/i-dont-care-about-cookies/" target="_blank">I don't care about cookies</a>
-                <a href="https://addons.mozilla.org/cs/firefox/addon/to-google-translate/" target="_blank">to google translate</a>
-                <p style="grid-column: 1 / -1; margin: 0; font-size: 0.9em; word-wrap: break-word;">mpv --ytdl-format=worst --ontop=yes --save-position-on-quit=yes --geometry=35%+0-50 --player-operation-mode=pseudo-gui –fs=no –cache-secs=180 –demuxer-readahead-secs=0 –ytdl-raw-options=no-check-certificate=</p> 
-            </div>
-        </details>
-
-        <details>
-            <summary>Další</summary>
-            <div class="links-grid">
-                <a href="https://github.com/lastpass/lastpass-cli" target="_blank">lastpass cli</a>
-                <a href="https://www.tsduchcov.cz/svoz-odpadu/svoz-brko/" target="_blank">biodopad</a>
-                <a href="http://www.prepper.cz/" target="_blank">prepper</a>
-                <a href="http://preppers.cz/forum/" target="_blank">prepper - forum</a>
-            </div>
-        </details>
     </div>
 </body>
 </html>
