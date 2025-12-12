@@ -1,109 +1,106 @@
-/* Základní reset a nastavení */
+/* Základní styly pro tělo stránky */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f9;
+    background-color: #f0f4f8; /* Světle modré pozadí */
     color: #333;
-    line-height: 1.6;
     margin: 0;
-    padding: 20px 0;
+    padding: 20px;
 }
 
+/* Hlavní kontejner, který drží celý obsah */
 .container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 15px;
-}
-
-h1 {
-    text-align: center;
-    color: #0056b3;
-    margin-bottom: 30px;
-}
-
-/* Styl pro <details> sekci */
-details {
     background-color: #ffffff;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Styl pro hlavní nadpis */
+.container h1 {
+    color: #1e88e5; /* Modrá barva */
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* Styl pro rozbalovací sekce */
+details {
+    background-color: #e3f2fd; /* Světlejší modré pozadí pro sekce */
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    border: 1px solid #bbdefb;
 }
 
-details:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
+/* Styl pro shrnutí (nadpis rozbalovací sekce) */
 summary {
-    font-size: 1.15rem;
     font-weight: bold;
+    font-size: 1.2em;
     padding: 15px 20px;
     cursor: pointer;
-    outline: none;
-    list-style: none; /* Skryje výchozí šipku/trojúhelník */
-    position: relative;
-    background-color: #eaf4ff;
-    border-radius: 8px 8px 0 0;
+    background-color: #90caf9; /* Mírně tmavší modrá */
+    border-radius: 8px;
+    color: #1a237e; /* Tmavě modrý text */
+    list-style: none; /* Skryje výchozí šipku */
 }
 
-/* Vlastní šipka pro summary */
+/* Přidá vlastní šipku pro rozbalení */
+summary::marker {
+    content: none;
+}
 summary::before {
-    content: '+';
-    font-size: 1.2rem;
+    content: '▶';
     margin-right: 10px;
     display: inline-block;
-    transition: transform 0.3s ease;
-    color: #0056b3;
+    transition: transform 0.2s;
 }
 
-details[open] > summary::before {
-    content: '−';
+/* Změní šipku, když je sekce otevřená */
+details[open] summary::before {
+    content: '▼';
     transform: rotate(0deg);
 }
 
-/* Styl pro odkazy uvnitř details */
+/* Kontejner pro odkazy (links-grid) */
 .links-grid {
-    padding: 15px 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsivní rozvržení */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responzivní mřížka */
     gap: 10px;
-    border-top: 1px solid #eee;
+    padding: 15px 20px;
+    border-top: 1px solid #bbdefb;
 }
 
+/* Styl pro jednotlivé odkazy */
 .links-grid a {
     display: block;
-    padding: 8px 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #eee;
-    border-radius: 4px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
     text-decoration: none;
     color: #007bff;
-    transition: background-color 0.2s, color 0.2s;
-    white-space: nowrap; /* Zabrání zalomení textu odkazu */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Přidá tři tečky, pokud se nevejde */
+    transition: background-color 0.2s, transform 0.2s;
+    font-size: 0.9em;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
+/* Efekt při najetí myši na odkaz */
 .links-grid a:hover {
-    background-color: #e0f0ff;
-    color: #0056b3;
+    background-color: #bbdefb; /* Světle modrý hover */
+    color: #1a237e;
+    transform: translateY(-2px); /* Mírný posun nahoru */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Styl pro vnitřní nadpisy (Předměty), kde byl původně inline styl */
+/* Styl pro nadpisy předmětů uvnitř gridu */
 .subject-heading {
-    grid-column: 1 / -1; /* Nadpis přes celou šířku */
-    margin: 10px 0;
-    padding: 5px 0;
-    border-bottom: 2px solid #ff0000;
-    color: red; /* Přesunuto z inline stylu */
-}
-
-/* Responsivní úpravy pro menší obrazovky */
-@media (max-width: 600px) {
-    .links-grid {
-        grid-template-columns: 1fr; /* Jeden sloupec na mobilu */
-    }
-    summary {
-        font-size: 1.1rem;
-    }
+    grid-column: 1 / -1; /* Roztáhne nadpis přes celou šířku mřížky */
+    color: #4db6ac; /* Zelenomodrá barva */
+    margin: 15px 0 5px 0;
+    font-size: 1.1em;
+    border-bottom: 1px dashed #b2dfdb;
+    padding-bottom: 5px;
 }
