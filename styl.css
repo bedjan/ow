@@ -31,7 +31,7 @@ body {
 }
 
 /* =======================================
-   2. Layout a kontejnery
+   2. Layout a navigace (S ohraničenými odkazy)
    ======================================= */
 .container {
     max-width: 1200px;
@@ -51,24 +51,49 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 }
 
 nav ul li {
-    margin-right: 25px;
+    margin-right: 15px;
 }
 
+/* Styl pro ohraničení navigačních odkazů */
 nav a {
     text-decoration: none;
     color: var(--color-text-main);
     font-weight: 500;
-    padding: 5px 0;
-    transition: color 0.2s;
+    
+    /* Ohraničení */
+    padding: 8px 12px;
+    border: 1px solid var(--color-secondary); /* Hranaté ohraničení */
+    border-radius: 4px; 
+    display: block;
+    transition: all 0.2s;
 }
 
 nav a:hover {
-    color: var(--color-primary);
-    border-bottom: 2px solid var(--color-primary);
+    color: var(--color-surface); 
+    background-color: var(--color-primary); 
+    border-color: var(--color-primary); 
 }
+
+/* Styl pro ohraničení odkazů uvnitř běžného textu */
+p a, li a {
+    border: 1px solid var(--color-secondary);
+    border-radius: 4px;
+    padding: 2px 5px;
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: all 0.2s;
+}
+
+p a:hover, li a:hover {
+    border-color: var(--color-primary);
+    background-color: #e9ecef; /* Světle šedé pozadí při najetí */
+    color: var(--color-primary);
+}
+
 
 /* =======================================
    3. Sekce Hlavní obsah a Profi karta
@@ -85,7 +110,7 @@ nav a:hover {
     padding: 30px;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-default);
-    flex-grow: 1; /* Zajistí, že zabere většinu místa */
+    flex-grow: 1; 
 }
 
 .profile-card h1 {
@@ -100,9 +125,9 @@ nav a:hover {
 }
 
 .profile-image-container {
-    flex-shrink: 0; /* Zabrání zmenšení */
+    flex-shrink: 0; 
     width: 300px;
-    height: 300px; /* Nastavte pevnou velikost, pokud obrázek chybí */
+    height: 300px; 
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow-default);
@@ -111,12 +136,12 @@ nav a:hover {
 .profile-image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Zajistí, že se obrázek vejde do kontejneru */
+    object-fit: cover; 
     display: block;
 }
 
 /* =======================================
-   4. Tlačítka
+   4. Tlačítka (Již jsou hranatá)
    ======================================= */
 .button {
     display: inline-block;
@@ -124,7 +149,7 @@ nav a:hover {
     background-color: var(--color-primary);
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 5px; /* Lehce zaoblené, můžete dát 0px pro ostré rohy */
     font-weight: 600;
     transition: background-color 0.2s, transform 0.1s;
     border: none;
@@ -132,7 +157,7 @@ nav a:hover {
 }
 
 .button:hover {
-    background-color: #0056b3; /* Tmavší modrá při najetí */
+    background-color: #0056b3; 
     transform: translateY(-1px);
 }
 
@@ -149,7 +174,7 @@ nav a:hover {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adaptivní rozvržení */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 30px;
     margin-bottom: 60px;
 }
@@ -164,7 +189,7 @@ nav a:hover {
 
 .project-card:hover {
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    transform: translateY(-3px); /* Lehký pohyb nahoru pro efekt */
+    transform: translateY(-3px); 
 }
 
 .project-image {
@@ -226,7 +251,7 @@ footer a:hover {
     }
 
     .main-content {
-        flex-direction: column; /* Přehození profilu a obrázku na sebe */
+        flex-direction: column; 
         gap: 20px;
     }
 
@@ -235,11 +260,11 @@ footer a:hover {
     }
 
     .profile-image-container {
-        width: 100%; /* Obrázek zabere celou šířku */
+        width: 100%; 
         height: auto;
     }
 
     .project-grid {
-        grid-template-columns: 1fr; /* Jeden sloupec na mobilu */
+        grid-template-columns: 1fr; 
     }
 }
