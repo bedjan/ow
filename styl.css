@@ -1,106 +1,245 @@
-/* Základní styly pro tělo stránky */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f4f8; /* Světle modré pozadí */
-    color: #333;
+/* =======================================
+   1. Globální nastavení a reset
+   ======================================= */
+:root {
+    /* Hlavní barvy */
+    --color-primary: #007bff; /* Modrá pro akcenty a tlačítka */
+    --color-secondary: #6c757d; /* Šedá pro doplňky */
+    --color-background: #f8f9fa; /* Velmi světle šedé pozadí */
+    --color-surface: #ffffff; /* Bílé pozadí pro karty/obsah */
+    --color-text-main: #212529; /* Tmavá barva textu */
+    --color-text-light: #495057; /* Lehčí text (popisky, patička) */
+
+    /* Stíny a zaoblení */
+    --shadow-default: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --border-radius: 8px;
+}
+
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text-main);
+    background-color: var(--color-background);
+    padding: 0;
+    margin: 0;
+}
+
+/* =======================================
+   2. Layout a kontejnery
+   ======================================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid #dee2e6;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    margin-bottom: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+}
+
+nav ul li {
+    margin-right: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-text-main);
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+}
+
+/* =======================================
+   3. Sekce Hlavní obsah a Profi karta
+   ======================================= */
+.main-content {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* Profilová karta (hlavní vizitka) */
+.profile-card {
+    background-color: var(--color-surface);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-default);
+    flex-grow: 1; /* Zajistí, že zabere většinu místa */
+}
+
+.profile-card h1 {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.profile-card p {
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+}
+
+.profile-image-container {
+    flex-shrink: 0; /* Zabrání zmenšení */
+    width: 300px;
+    height: 300px; /* Nastavte pevnou velikost, pokud obrázek chybí */
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-default);
+}
+
+.profile-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Zajistí, že se obrázek vejde do kontejneru */
+    display: block;
+}
+
+/* =======================================
+   4. Tlačítka
+   ======================================= */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.2s, transform 0.1s;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Tmavší modrá při najetí */
+    transform: translateY(-1px);
+}
+
+/* =======================================
+   5. Sekce Projekty (Grid)
+   ======================================= */
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #e9ecef;
+    color: var(--color-text-main);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adaptivní rozvržení */
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.project-card {
+    background-color: var(--color-surface);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-default);
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.project-card:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px); /* Lehký pohyb nahoru pro efekt */
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
     padding: 20px;
 }
 
-/* Hlavní kontejner, který drží celý obsah */
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+.project-info h3 {
+    color: var(--color-text-main);
+    margin-bottom: 5px;
 }
 
-/* Styl pro hlavní nadpis */
-.container h1 {
-    color: #1e88e5; /* Modrá barva */
+.project-info p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+}
+
+/* =======================================
+   6. Patička
+   ======================================= */
+footer {
     text-align: center;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 10px;
+    padding: 30px 0;
+    margin-top: 40px;
+    border-top: 1px solid #dee2e6;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
 }
 
-/* Styl pro rozbalovací sekce */
-details {
-    background-color: #e3f2fd; /* Světlejší modré pozadí pro sekce */
-    border-radius: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #bbdefb;
-}
-
-/* Styl pro shrnutí (nadpis rozbalovací sekce) */
-summary {
-    font-weight: bold;
-    font-size: 1.2em;
-    padding: 15px 20px;
-    cursor: pointer;
-    background-color: #90caf9; /* Mírně tmavší modrá */
-    border-radius: 8px;
-    color: #1a237e; /* Tmavě modrý text */
-    list-style: none; /* Skryje výchozí šipku */
-}
-
-/* Přidá vlastní šipku pro rozbalení */
-summary::marker {
-    content: none;
-}
-summary::before {
-    content: '▶';
-    margin-right: 10px;
-    display: inline-block;
-    transition: transform 0.2s;
-}
-
-/* Změní šipku, když je sekce otevřená */
-details[open] summary::before {
-    content: '▼';
-    transform: rotate(0deg);
-}
-
-/* Kontejner pro odkazy (links-grid) */
-.links-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responzivní mřížka */
-    gap: 10px;
-    padding: 15px 20px;
-    border-top: 1px solid #bbdefb;
-}
-
-/* Styl pro jednotlivé odkazy */
-.links-grid a {
-    display: block;
-    padding: 10px;
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 6px;
+footer a {
+    color: var(--color-secondary);
     text-decoration: none;
-    color: #007bff;
-    transition: background-color 0.2s, transform 0.2s;
-    font-size: 0.9em;
-    text-align: center;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-/* Efekt při najetí myši na odkaz */
-.links-grid a:hover {
-    background-color: #bbdefb; /* Světle modrý hover */
-    color: #1a237e;
-    transform: translateY(-2px); /* Mírný posun nahoru */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+footer a:hover {
+    color: var(--color-primary);
 }
 
-/* Styl pro nadpisy předmětů uvnitř gridu */
-.subject-heading {
-    grid-column: 1 / -1; /* Roztáhne nadpis přes celou šířku mřížky */
-    color: #4db6ac; /* Zelenomodrá barva */
-    margin: 15px 0 5px 0;
-    font-size: 1.1em;
-    border-bottom: 1px dashed #b2dfdb;
-    padding-bottom: 5px;
+/* =======================================
+   7. Responzivita (pro mobilní telefony)
+   ======================================= */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    nav ul {
+        justify-content: space-around;
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin-right: 0;
+    }
+
+    .main-content {
+        flex-direction: column; /* Přehození profilu a obrázku na sebe */
+        gap: 20px;
+    }
+
+    .profile-card h1 {
+        font-size: 2rem;
+    }
+
+    .profile-image-container {
+        width: 100%; /* Obrázek zabere celou šířku */
+        height: auto;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr; /* Jeden sloupec na mobilu */
+    }
 }
